@@ -1,7 +1,7 @@
 import React from 'react'
+import TaskCard from './TaskCard'
 
-
-function TaskList({task}) {
+function TaskList({task, deleteTask}) {
     
     if(task.length === 0) {
         return <h1>SALO SE LA RE COME POR TONTO </h1>
@@ -10,10 +10,7 @@ function TaskList({task}) {
     return (
         <div>
             {task.map(task => (
-                <div key={task.id}>
-                    <h1>{task.name}</h1>
-                    <p>Su precio es: {task.price}</p>
-                </div>
+                <TaskCard key={task.id} task={task} deleteTask = {deleteTask}/>
             ))}
         </div>
   )
