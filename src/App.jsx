@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react';
-import reactLogo from './assets/react.svg';;
-import viteLogo from '/vite.svg';
 import './App.css';
-import TaskList from './taskList'
+import TaskList from './taskList' 
 import TaskForm from './taskForm';
 import {task as data} from './task'
 
@@ -16,13 +14,18 @@ function App() {
   }, [])
   
 
-  function createTask(tasks){
-    setTask([...task, tasks])
+  function createTask(tasksTitle){
+    setTask([...task, {
+      name: tasksTitle,
+      id: task.length
+    }])
   }
+
+
 
   return (
     <>
-      <TaskForm/>
+      <TaskForm createTask={createTask}/>
       <TaskList task={task}/>
     </>
   )
