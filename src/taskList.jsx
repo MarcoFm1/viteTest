@@ -1,15 +1,7 @@
 import React from 'react'
-import { useState, useEffect } from 'react';
-import {task as data} from './task'
 
 
-function TaskList() {
-
-    const [task, setTask] = useState([])
-
-    useEffect(() => {
-      setTask(data)
-    }, [])
+function TaskList({task}) {
     
     if(task.length === 0) {
         return <h1>SALO SE LA RE COME POR TONTO </h1>
